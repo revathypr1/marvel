@@ -35,8 +35,8 @@ body {
 }
 #spotlight header {
 	display: flex;
+	justify-content: space-between;
 	padding: 14px;
-    
 }
 #spotlight header .left {
 	display: flex;
@@ -74,28 +74,108 @@ body {
 }
 #spotlight header .middle ul {
 	display: flex;
-	padding: 20px;
+	padding: 23px;
 }
 #spotlight header .middle ul li {
 	font-size: 19px;
 	font-weight: 900;
 	margin-left: 37px;
-	width: 20%;
+	width: 80px;
 	color: #7f7f7f;
 	overflow: hidden;
+}
+#spotlight header .middle ul li :last-child{
+    margin-left: 0;
 }
 #spotlight header .middle ul li a{
 	color: #7f7f7f;
 	position: relative;
 	display: inline-block;
 }
+#menu-icon {
+    display: none;
+    width: 35px;
+    z-index: 10;
+}
+#menu-icon img {
+    width: 100%;
+    display: block;
+    z-index: 10px;
+}
+#mobile-menu {
+    /* display: none; */
+}
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    /* background: #fff; */
+    padding: 9px;
+    z-index: 2;
+    bottom: 0px;
+    width: 247px;
+    padding-top: 91px;
+    transition: all 0.4s ease-in;
+    height: 50%;
+}
+span.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+    display: none;
+}
+span.close {
+    position: fixed;
+    right: 300px;
+    top: 40px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+}
+span.close img {
+    display: block;
+    width: 100%;
+    
+background: #000;
+padding: 8px;
+border-radius: 25%
+}
+span.close.active {
+    display: block;
+}
+#mobile-menu.active {
+    right: 0;
+}
+span.overlay.active {
+    /* display: block; */
+}
+#mobile-menu ul li {
+    margin-bottom: 20px;
+}
+#mobile-menu ul li:last-child {
+    margin-bottom: 0;
+}
+#mobile-menu ul li a {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+    display: block;
+}
+
 #spotlight header .middle ul li a:hover{
 	transform: translateY(-30px);
 	transition: 0.3s ease-in-out;
 }
 #spotlight header div.middle  ul li:nth-child(1) a::before{
     content: "About";
-    color: #7c6e4e;
+    color: #f8c246;
     position: absolute;
 	transform: translateY(30px);
 }
@@ -121,8 +201,7 @@ body {
 #spotlight header .right {
 	display: flex;
 	align-items: center;
-	margin-left: 20%;
-	
+	/* margin-left: 20%; */
 }
 #spotlight header .right h1 {
 }
@@ -155,7 +234,7 @@ body {
 #spotlight div.container div.left h2 {
 	font-size: 35px;
 	font-weight: 900;
-	padding-top: 40px;
+	padding-top: 35px;
 	color: #000;
 }
 #spotlight div.container div.left h2 span::before { 
@@ -212,6 +291,7 @@ body {
 	background: #eeeeee;
 	padding:14px 35px;
   	border-radius: 30px;
+      display: inline-block;
 }
 #spotlight div.container div.left a.button:hover{
     color: #f8c246;
@@ -233,6 +313,7 @@ body {
 	border-radius: 30px;
 	color: #fff;
 	font-weight: 700;
+    display: inline-block;
 }
 #spotlight div.container div.left a.button2:hover {
     background: #f8c246;
@@ -257,11 +338,31 @@ body {
 #main div.images{
 	width: 68%;
 	margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 } 
 #main div.images img{
 display: block;
 width: 100%;
 }
+#main div.owl-carousel.owl-loaded.owl-drag div.owl-nav {
+    font-size: 50px;
+    font-family: "baloo_2regular";
+}
+
+.owl-carousel .owl-nav .owl-next {
+    position: absolute;
+    bottom: 50%;
+    right: -20px;
+}
+
+.owl-carousel .owl-nav .owl-prev {
+    position: absolute;
+    bottom: 50%;
+    left: -20px;
+}
+
 
 #experience {
 	margin-left: 10%;
@@ -657,7 +758,7 @@ body.dark_theme #spotlight div.container div.left a.button{
     }
     #spotlight div.container div.left a.button2 {
         background: #474559;
-        padding: 15px 189px;
+        padding: 12px 185px;
     }
     #experience div ul li div.content div.top {
         
@@ -684,5 +785,149 @@ body.dark_theme #spotlight div.container div.left a.button{
     #message div.right h3 br{
         display: none;
     }
+    #message div.right h3 {
+        font-size: 36px;
+    }
+    #spotlight header .middle ul li{
+        display: none;
+    }
+    #menu-icon {
+        display: block;
+    }
+    span.close {
+        display: none;
+    }
+    header nav.menu {
+        display: none;
+     }
+     #spotlight header{
+         justify-content: space-between;
+     }
+}
+span.close.active {
+    display: block;
+}
 
+@media all and (max-width:768px){
+    #spotlight div.container div.left a.button i {
+        margin-right: 15px;
+        font-size: 59%;
+    }
+    #spotlight div.container div.left a.button2 {
+        background: #474559;
+        padding: 12px 138px;
+    }
+
+}
+@media all and (max-width:640px){
+    #spotlight div.container div.left h2 span::before {
+        font-size: 34px;
+    }
+    #spotlight div.container div.left a.button {
+        margin-bottom: 37px;
+        padding: 12px 80px;
+    }
+    #spotlight div.container div.left a.button2{
+        margin-bottom: 37px;
+        padding: 12px 80px;
+    }
+    #spotlight div.container div.left a.button span{
+        font-size: 18px;
+    }
+}
+@media all and (max-width:540px){
+    #spotlight div.container div.left a.button {
+        padding: 12px 58px;
+    }
+    #spotlight div.container div.left a.button span{
+        font-size: 14px;
+    }
+    #spotlight div.container div.left a.button2{
+        margin-bottom: 37px;
+        padding: 12px 58px;
+}
+@media all and (max-width:480px){
+    #spotlight div.container div.left h1{
+        display: none;
+    }
+    #spotlight div.container {
+        padding: 2px;
+    }
+    #spotlight div.container div.left h2 {
+       
+      font-size: 18px;
+    }
+    #spotlight div.container div.left h2 span::before {
+        font-size: 21px;
+    }
+    #spotlight div.container div.left p {
+        font-size: 15px;
+        font-weight: 700;
+    }
+    span.close img {
+        display: none;
+    }
+    #spotlight div.container div.left{
+        padding: 5px 0;
+        transition: 2s ease;
+    }
+    #message div.right h3 {
+        font-size: 34px;
+    }
+    #experience div.right ul::before {
+        height: 72%;
+    }
+    #experience div ul::before {
+        content: "";
+        width: 3px;
+        height: 83%;
+    }
+    #experience div h3 {
+        font-size: 31px;
+    }
+    #spotlight div.container div.left a.button span {
+        font-size: 17px;
+    }
+    #spotlight {
+        padding: 5px 0;
+        transition: 2s ease;
+    }
+    #spotlight div.container div.left {
+       transform: translateX(30px);
+        transition: .5s ease;
+    }
+    #mobile-menu.active {
+        /* top: 100px;
+        left: 120px; */
+        transition: 1s ease;
+    }
+    #mobile-menu {
+       /* left:  430px;
+        top: 100px; */
+        transition: 1s ease;
+    }
+    #menu-icon {
+        width: 25px;
+    }
+    #spotlight {
+        padding: 5px 0;
+        transition: 2s ease;
+    }
+    #spotlight div.container.active {
+        padding: 130px 0;
+        transition: .5s ease;
+    }
+}
+@media all and (max-width:360px){
+    #spotlight div.container div.left h1{
+        display: block;
+        font-size: 20px;
+    }
+    #spotlight div.container div.left a.button2{
+        font-size: 15px;
+        padding: 12px 65px;
+    }
+    #spotlight div.container div.left a.button span{
+        font-size: 12px;
+    }
 }

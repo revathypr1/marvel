@@ -9,7 +9,11 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
-</head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+       <script src="js/jquery-3.5.1.min.js"></script>
+       <link rel="stylesheet" href="css/owl.carousel.min.css">
+       <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    </head>
 <body>
     <section id="spotlight">
         <section class="wrapper">
@@ -30,18 +34,18 @@
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
-                <!-- <a id="menu-icon">
+                <a id="menu-icon">
                     <img src="images/menu.svg" />
                 </a>
-                <nav id="mobile-menu" >
+                <nav id="mobile-menu">
                     <ul>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Resume</a></li>
-                        <li><a href="">Contacts</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
                 </nav>
-                <span class="close"><img src="images/close.svg" alt="close" /></span> -->
+                <span class="close"><img src="images/close.svg" alt="" /></span>
                 <div class="right">
                     <h1 id="icon" >
                         <a href="#">
@@ -51,11 +55,12 @@
                     <h2>Color mode</h2>
                 </div>
             </header>
-            <div class="container">
+            <span class="overlay"></span>
+            <div class="container" id="container">
                 <section class="wrapper">
                     <div class="left">
                         <h1>Welcome to my portfolio website!</h1>
-                        <h2>Hey folks, I'm<span></span></h2>
+                        <h2>Hey folks, I'm <span></span></h2>
                         <p>Building a successful product is a challenge. I am highly energetic in user experience design, interfaces and web development.</p>
                         <a class="button"><i class="far fa-file-alt"></i><span>Download Resume</span></a>
                         <a class="button2">Get a free quote</a>
@@ -67,16 +72,20 @@
             </div>
         </section>
     </section>
-<!-- </section> -->
+<!-- </#spotlight> -->
 <section id="main">
     <section class="wrapper">
         <h1>Things I have designed for digital media agencies</h1>
-        <div class="images">
-            <img src="images/project-image01.png" alt="pages"/>
-            <img src="images/project-image02.png" alt="pages"/>
-            <img src="images/project-image03.png" alt="pages"/>
-            <img src="images/project-image04.png" alt="pages"/>
-            <img src="images/project-image05.png" alt="pages"/>
+        <div class="owl-carousel owl-theme ">
+            <!-- <div class="images"> -->
+                
+                    <img src="images/project-image01.png" alt="pages"/>
+                    <img src="images/project-image02.png" alt="pages"/>
+                    <img src="images/project-image03.png" alt="pages"/>
+                    <img src="images/project-image04.png" alt="pages"/>
+                    <img src="images/project-image05.png" alt="pages"/>
+                
+            <!-- </div> -->
         </div>
     </section>
 </section>
@@ -220,6 +229,8 @@
         <p>Designed by <a href="#">Tooplate</a></p>
     </section>
 </footer>
+
+<script src="js/owl.carousel.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
